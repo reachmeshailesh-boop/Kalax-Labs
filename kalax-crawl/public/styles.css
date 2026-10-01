@@ -1,0 +1,484 @@
+:root {
+    color-scheme: dark;
+    font-family:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --background: #0b0b0a;
+    --surface: #121210;
+    --surface-2: #181815;
+    --text: #f1eee6;
+    --muted: #98958d;
+    --line: #2a2924;
+    --gold: #c8a96b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.page {
+    width: min(1120px, calc(100% - 48px));
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.masthead {
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+.project-number {
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+}
+
+.hero {
+    padding: 92px 0 58px;
+    max-width: 760px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(52px, 8vw, 92px);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+}
+
+.lede {
+    max-width: 580px;
+    margin: 28px 0 0;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+.workspace {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 30px 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 150px 170px;
+    gap: 12px;
+    align-items: end;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+input,
+select {
+    width: 100%;
+    height: 52px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    outline: none;
+    background: var(--surface);
+    color: var(--text);
+    padding: 0 15px;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--gold);
+}
+
+button {
+    height: 52px;
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    background: var(--gold);
+    color: #11100d;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.05);
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.55;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.summary {
+    margin-top: 22px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: auto;
+    min-height: 94px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 720px) {
+    .page {
+        width: min(100% - 30px, 1120px);
+    }
+
+    .hero {
+        padding-top: 64px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+    }
+}
+
+.progress {
+    margin-top: 22px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.progress-header {
+    min-height: 46px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.progress-list {
+    max-height: 220px;
+    overflow: auto;
+}
+
+.progress-row {
+    min-height: 44px;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr);
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+}
+
+.progress-row:last-child {
+    border-bottom: 0;
+}
+
+.progress-mark {
+    color: var(--gold);
+}
+
+.progress-url {
+    overflow: hidden;
+    color: var(--muted);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.results {
+    margin-top: 22px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.results-toolbar {
+    min-height: 76px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.results-kicker {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.results-meta {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.export-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.export-button {
+    min-height: 36px;
+    padding: 0 13px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.export-button:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.results-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.results-table th,
+.results-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.results-table th {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.results-table td {
+    font-size: 12px;
+}
+
+.results-table th:nth-child(1),
+.results-table td:nth-child(1) {
+    width: 52%;
+}
+
+.results-table th:nth-child(2),
+.results-table td:nth-child(2) {
+    width: 34%;
+}
+
+.results-table th:nth-child(3),
+.results-table td:nth-child(3) {
+    width: 14%;
+}
+
+.result-url,
+.result-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.result-url {
+    color: var(--text);
+}
+
+.result-title {
+    color: var(--muted);
+}
+
+.result-status {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.results-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+@media (max-width: 720px) {
+    .results-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .results-table {
+        min-width: 640px;
+    }
+}
+
+.progress-header {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.progress-header:hover {
+    background: var(--surface2);
+}
+
+.progress-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-chevron {
+    min-width: 12px;
+    color: var(--gold);
+    font-size: 15px;
+    line-height: 1;
+    text-align: center;
+}
+
+.progress.is-collapsed .progress-list {
+    display: none;
+}
+
+.result-link {
+    display: block;
+    overflow: hidden;
+    color: var(--text);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.result-link:hover {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.results-table th:nth-child(1),
+.results-table td:nth-child(1) {
+    width: 48%;
+}
+
+.results-table th:nth-child(2),
+.results-table td:nth-child(2) {
+    width: 40%;
+}
+
+.results-table th:nth-child(3),
+.results-table td:nth-child(3) {
+    width: 12%;
+}
+
+.status-error {
+    color: var(--text);
+}
+
+.status-error::before {
+    content: "×";
+    margin-right: 7px;
+    color: var(--gold);
+}
+
+.status-running::before,
+.status-complete::before {
+    content: "•";
+    margin-right: 7px;
+    color: var(--gold);
+}
+
+.export-button:focus-visible,
+.progress-header:focus-visible,
+.result-link:focus-visible {
+    outline: 1px solid var(--gold);
+    outline-offset: 3px;
+}

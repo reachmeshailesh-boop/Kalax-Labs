@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Kalax Crawl — a simple, local-first website crawler."
+    >
+    <title>Kalax Crawl — Kalax Labs</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="page">
+        <header class="masthead">
+            <a class="brand" href="/">
+                KALAX <span>LABS</span>
+            </a>
+
+            <div class="project-number">001</div>
+        </header>
+
+        <section class="hero">
+            <div class="eyebrow">OPEN SOURCE / LOCAL FIRST</div>
+
+            <h1>Kalax Crawl</h1>
+
+            <p class="lede">
+                Crawl a website and inspect its pages.
+                No API key. No cloud account.
+            </p>
+        </section>
+
+        <section class="workspace">
+            <form id="crawl-form">
+                <div class="field field-url">
+                    <label for="url">Website</label>
+
+                    <input
+                        id="url"
+                        name="url"
+                        type="url"
+                        value="https://example.com"
+                        required
+                    >
+                </div>
+
+                <div class="field field-max">
+                    <label for="max-pages">Max pages</label>
+
+                    <select id="max-pages" name="maxPages">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+
+                <button id="start-button" type="submit">
+                    Start crawl
+                </button>
+            </form>
+
+            <div id="status" class="status">
+                <span class="status-dot"></span>
+                <span id="status-text">Ready to crawl.</span>
+            </div>
+
+            <div id="progress" class="progress" hidden>
+                <button
+                    id="progress-toggle"
+                    class="progress-header"
+                    type="button"
+                    aria-expanded="true"
+                >
+                    <span>CRAWL ACTIVITY</span>
+
+                    <span class="progress-header-right">
+                        <span id="progress-count">
+                            0 pages processed
+                        </span>
+
+                        <span
+                            id="progress-chevron"
+                            class="progress-chevron"
+                            aria-hidden="true"
+                        >
+                            −
+                        </span>
+                    </span>
+                </button>
+
+                <div id="progress-list" class="progress-list"></div>
+            </div>
+
+            <div id="summary" class="summary" hidden></div>
+
+            <section id="results" class="results" hidden>
+                <div class="results-toolbar">
+                    <div>
+                        <div class="results-kicker">CRAWL RESULTS</div>
+                        <div id="results-meta" class="results-meta"></div>
+                    </div>
+
+                    <div class="export-actions">
+                        <button
+                            id="download-csv"
+                            class="export-button"
+                            type="button"
+                        >
+                            Download CSV
+                        </button>
+
+                        <button
+                            id="download-json"
+                            class="export-button"
+                            type="button"
+                        >
+                            Download JSON
+                        </button>
+                    </div>
+                </div>
+
+                <div class="results-table-wrap">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>URL</th>
+                                <th>Title</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="results-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <footer>
+            <span>Built by Kalax Enterprises</span>
+            <span>Local-first · No API key · Open source</span>
+        </footer>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+</body>
+</html>

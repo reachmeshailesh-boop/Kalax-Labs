@@ -1,0 +1,31 @@
+{
+  "name": "kalax-crawl",
+  "version": "1.0.0",
+  "description": "A small local-first website crawler built with Crawlee and Playwright.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/core.test.mjs test/crawler.integration.test.mjs test/web.integration.test.mjs",
+    "crawl": "node src/main.mjs",
+    "web": "node src/server.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "keywords": [
+    "crawler",
+    "web-crawler",
+    "crawlee",
+    "playwright",
+    "scraping",
+    "open-source",
+    "kalax-labs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "crawlee": "^3.18.2",
+    "playwright": "^1.63.0"
+  },
+  "private": "false",
+  "engines": {
+    "node": ">=22"
+  }
+}
