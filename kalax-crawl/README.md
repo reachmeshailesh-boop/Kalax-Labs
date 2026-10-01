@@ -26,7 +26,7 @@ Built by **Kalax Enterprises** as **Kalax Labs #001**.
 ## Install
 
 ```bash
-git clone <REPOSITORY-URL>
+git clone https://github.com/reachmeshailesh-boop/Kalax-Labs.git
 cd Kalax-Labs/kalax-crawl
 npm install
 npx playwright install chromium
