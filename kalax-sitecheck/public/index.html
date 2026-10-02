@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SiteCheck — Kalax Labs</title>
+  <meta name="description" content="See what customers, search systems and machines can actually understand from your website.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brand">
+      <span class="brand-name">KALAX</span>
+      <span class="brand-labs">LABS / 002</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">WEBSITE CLARITY CHECK</p>
+
+      <h1>What does your website<br>actually tell the world?</h1>
+
+      <p class="intro">
+        See what customers, search systems and machines can actually
+        understand from your website — with evidence.
+      </p>
+
+      <form id="sitecheck-form" class="check-form">
+        <label for="website">Your website</label>
+
+        <div class="input-row">
+          <input
+            id="website"
+            name="website"
+            type="url"
+            placeholder="https://yourbusiness.com"
+            autocomplete="url"
+            required
+          >
+          <button type="submit">Check my website</button>
+        </div>
+
+        <p class="note">
+          Free local check · Up to 20 pages · Usually under a minute
+        </p>
+      </form>
+
+      <section id="analysis" class="analysis" hidden aria-live="polite">
+        <div class="analysis-top">
+          <div>
+            <p class="eyebrow">SITECHECK IN PROGRESS</p>
+            <h2 id="analysis-title">Checking your website…</h2>
+          </div>
+          <span id="analysis-time">0s</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <p id="analysis-status">
+          Opening the site and discovering pages…
+        </p>
+      </section>
+
+      <section id="results" class="results" hidden>
+        <div class="results-header">
+          <p class="eyebrow">YOUR SITECHECK</p>
+          <h2 id="results-title">Your website results</h2>
+          <p id="results-summary" class="results-summary"></p>
+
+          <div class="report-actions" aria-label="Download SiteCheck report">
+            <button id="download-pdf" class="report-download-primary" type="button">
+              Download PDF report
+            </button>
+            <button id="download-json" class="report-download-secondary" type="button">
+              Download JSON evidence
+            </button>
+          </div>
+        </div>
+
+        <div id="result-counts" class="result-counts"></div>
+        <div id="result-groups"></div>
+      </section>
+    </section>
+
+    <section class="explainer" aria-label="What SiteCheck looks for">
+      <article>
+        <span>01</span>
+        <h2>Can customers reach you?</h2>
+        <p>Contact and enquiry paths that help someone take the next step.</p>
+      </article>
+
+      <article>
+        <span>02</span>
+        <h2>Can search systems understand you?</h2>
+        <p>Page identification, working paths and preferred URLs.</p>
+      </article>
+
+      <article>
+        <span>03</span>
+        <h2>Can machines identify your business?</h2>
+        <p>Business identity and structured information exposed by your site.</p>
+      </article>
+    </section>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

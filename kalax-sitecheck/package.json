@@ -1,0 +1,28 @@
+{
+  "name": "kalax-sitecheck",
+  "version": "1.0.0",
+  "description": "A local-first website evidence checker for customer, search, identity, and machine-readability signals.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "web": "node src/server.mjs"
+  },
+  "keywords": [
+    "website-audit",
+    "site-check",
+    "crawlee",
+    "playwright",
+    "structured-data",
+    "open-source",
+    "kalax-labs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "crawlee": "^3.18.2",
+    "pdfkit": "^0.20.2",
+    "playwright": "^1.63.0"
+  }
+}
