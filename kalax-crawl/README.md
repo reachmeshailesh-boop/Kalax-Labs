@@ -6,6 +6,12 @@ Kalax Crawl takes a starting URL, follows same-host links up to a page limit, sh
 
 Built by **Kalax Enterprises** as **Kalax Labs #001**.
 
+![Kalax Crawl showing completed crawl results](docs/kalax-crawl-results.png)
+
+## Try it
+
+Clone the repository and run Kalax Crawl locally. No API key or cloud account is required.
+
 ## Features
 
 - Same-host website crawling

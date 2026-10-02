@@ -5,3 +5,6 @@ dist/
 .env
 
 output/
+
+# Local showcase source files
+kalax-crawl/demo/*.mov
