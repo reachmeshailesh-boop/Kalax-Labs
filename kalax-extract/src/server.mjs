@@ -75,8 +75,11 @@ async function readBody(req, maxBytes) {
 
 function clientKey(req, config) {
     if (config.trustProxy) {
+        // The last entry is the one appended by our trusted proxy; earlier
+        // entries are client-supplied and can be spoofed to evade the limit.
         const forwarded = String(req.headers['x-forwarded-for'] ?? '')
-            .split(',')[0]
+            .split(',')
+            .at(-1)
             .trim();
 
         if (forwarded) return forwarded;

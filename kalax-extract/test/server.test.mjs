@@ -201,3 +201,17 @@ test('the page states the privacy boundary without overclaiming', async () => {
         await app.close();
     }
 });
+
+test('behind a trusted proxy, a client-supplied leading X-Forwarded-For entry cannot evade the limit', async () => {
+    const app = await startServer({ config: config({ EXTRACT_RATE_LIMIT: '1', EXTRACT_TRUST_PROXY: '1' }) });
+
+    try {
+        await post(app.base, JPEG, { headers: { 'X-Forwarded-For': 'spoof-1, 9.9.9.9' } });
+
+        const second = await post(app.base, JPEG, { headers: { 'X-Forwarded-For': 'spoof-2, 9.9.9.9' } });
+
+        assert.equal(second.status, 429);
+    } finally {
+        await app.close();
+    }
+});
