@@ -1,0 +1,2 @@
+const q=v=>'"'+String(v??"").replaceAll('"','""')+'"';
+export function reportToCsv(r){const rows=[["section","item","owner","due"],["summary",r.summary,"",""]]; for(const [k,label] of [["keyPoints","key_point"],["decisions","decision"],["people","person"],["datesAndNumbers","date_or_number"],["needsReview","needs_review"]]) for(const v of r[k]) rows.push([label,v,"",""]); for(const a of r.actions) rows.push(["action",a.action,a.owner,a.due]); return rows.map(x=>x.map(q).join(",")).join("\n")+"\n"}
