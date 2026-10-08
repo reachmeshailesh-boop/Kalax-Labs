@@ -1,0 +1,20 @@
+{
+  "id": "A-01",
+  "category": "A",
+  "image": "images/A-01.jpg",
+  "expect": "report",
+  "transcription": "Exactly what a careful human reads on the page, line by line.",
+  "criticalNames": ["Amit"],
+  "criticalNumbers": ["250000"],
+  "criticalDates": ["Friday"],
+  "decisions": ["Keep Q2 pricing unchanged"],
+  "actions": [
+    { "action": "Call Amit", "owner": "", "due": "Friday" }
+  ],
+  "ambiguous": [
+    {
+      "description": "The amount could be 4,500 or 1,500.",
+      "flagMatch": ["amount", "4,500", "1,500"]
+    }
+  ]
+}

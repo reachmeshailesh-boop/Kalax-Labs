@@ -1,0 +1,14 @@
+{
+  "status": "PENDING",
+  "note": "No real handwriting images have been collected or tested. Nothing here is a qualification result.",
+  "plannedImages": 24,
+  "categories": {
+    "A": { "name": "Clean executive notes", "planned": 4 },
+    "B": { "name": "Rushed / messy handwriting", "planned": 4 },
+    "C": { "name": "Meeting notes with arrows, cross-outs and abbreviations", "planned": 4 },
+    "D": { "name": "Difficult photography: angle, shadow, background", "planned": 4 },
+    "E": { "name": "Deliberately ambiguous critical information", "planned": 4 },
+    "N": { "name": "Negative controls: blurry, blank, non-text or unusable (extra to the 20)", "planned": 4 }
+  },
+  "images": []
+}

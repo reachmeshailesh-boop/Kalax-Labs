@@ -1,14 +1,25 @@
 {
   "name": "kalax-extract",
-  "version": "0.1.0",
-  "private": false,
+  "version": "1.0.0",
+  "description": "Turn handwritten business notes into structured, actionable information. A Kalax Labs demo.",
   "type": "module",
   "scripts": {
     "start": "node src/server.mjs",
-    "verify": "node test/verify.mjs"
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "verify": "node scripts/verify.mjs"
   },
+  "keywords": [
+    "handwriting",
+    "document-extraction",
+    "multimodal",
+    "gemini",
+    "open-source",
+    "kalax-labs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "private": false,
   "engines": {
     "node": ">=22"
-  },
-  "license": "MIT"
+  }
 }

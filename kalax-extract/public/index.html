@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Kalax Extract — turn handwritten business notes into structured, actionable information."
+    >
+    <title>Kalax Extract — Kalax Labs</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="page">
+        <header class="masthead">
+            <a class="brand" href="/">KALAX <span>LABS</span></a>
+            <div class="project-number">003</div>
+        </header>
+
+        <section class="hero">
+            <div class="eyebrow">OPEN SOURCE / DEMO</div>
+            <h1>Kalax Extract</h1>
+            <p class="lede">
+                Turn handwritten business notes into structured,
+                actionable information.
+            </p>
+        </section>
+
+        <section class="workspace" aria-labelledby="upload-title">
+            <h2 id="upload-title">Upload one handwritten page</h2>
+
+            <form id="extract-form" novalidate>
+                <div class="pickers">
+                    <label class="button secondary" for="file-input">
+                        Choose image
+                    </label>
+                    <input
+                        id="file-input"
+                        class="visually-hidden"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+
+                    <label class="button secondary" for="camera-input">
+                        Take photo
+                    </label>
+                    <input
+                        id="camera-input"
+                        class="visually-hidden"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                        capture="environment"
+                    >
+
+                    <span id="file-name" class="file-name">No image selected</span>
+                </div>
+
+                <p class="hint">
+                    One JPEG, PNG or WebP image. Photograph the whole page in
+                    good light.
+                </p>
+
+                <div id="mock-panel" class="mock-panel" hidden>
+                    <label for="fixture">Mock mode — no AI is being called.</label>
+                    <select id="fixture"></select>
+                </div>
+
+                <button id="submit" class="button primary" type="submit" disabled>
+                    Extract report
+                </button>
+            </form>
+
+            <img id="preview" class="preview" alt="Preview of the selected note" hidden>
+
+            <p class="privacy">
+                Kalax does not intentionally store the uploaded image or the
+                extracted report after processing. The image is sent to an
+                external AI provider to be read; that processing is governed
+                by the provider, not by Kalax.
+            </p>
+        </section>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <div id="error" class="error" role="alert" hidden></div>
+
+        <section id="result" class="result" hidden>
+            <div id="review-banner" class="banner" hidden></div>
+
+            <div id="report"></div>
+
+            <div class="actions-bar">
+                <button id="download-csv" class="button primary" type="button">
+                    Download CSV
+                </button>
+            </div>
+
+            <section class="cta">
+                <h2>What if this understood your documents?</h2>
+                <p>
+                    Kalax can adapt this capability to your forms, reports and
+                    workflows—and connect the resulting information to the
+                    systems your organisation already uses.
+                </p>
+                <a id="cta-link" class="button primary" href="/">
+                    Build this for my organisation →
+                </a>
+            </section>
+        </section>
+
+        <footer class="footer">
+            Kalax Labs #003 — Kalax Extract. A demonstration of one capability;
+            not a full document-processing product.
+        </footer>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+</body>
+</html>

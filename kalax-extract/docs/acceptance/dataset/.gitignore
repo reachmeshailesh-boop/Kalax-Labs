@@ -1,0 +1,5 @@
+# Real handwriting photos and live-run output may be private. Commit only
+# ground truth and the manifest.
+images/*
+!images/.gitkeep
+results/
