@@ -1,0 +1,14 @@
+{
+  "name": "kalax-extract",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "verify": "node test/verify.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}
